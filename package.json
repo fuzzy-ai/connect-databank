@@ -1,40 +1,41 @@
 {
-    "name": "connect-databank",
-    "version": "0.7.0",
-    "author": "Evan Prodromou <evan@e14n.com>",
-    "description": "Use any databank driver as a store for connect sessions",
-    "scripts": {
-        "test": "vows --spec --isolate test/*-test.js"
-    },
-    "main": "./lib/connect-databank",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/evanp/connect-databank.git"
-    },
-    "keywords": [
-        "connect",
-        "session",
-        "databank"
-    ],
-    "dependencies" : {
-        "step": "0.0.x",
-        "jankyqueue": "0.1.x",
-	"underscore":  "1.4.x",
-	"databank":  "0.17.x"
-    },
-    "devDependencies": {
-        "vows":  "0.7.x",
-        "connect": "2.6.x",
-        "zombie": "1.4.x",
-        "bunyan": "0.17.x"
-    },  
-    "licenses": [
-        {
-            "type": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-        }
-    ],
-    "engines": {
-        "node": ">=0.8"
+  "name": "connect-databank",
+  "version": "0.7.0",
+  "author": "Evan Prodromou <evan@e14n.com>",
+  "description": "Use any databank driver as a store for connect sessions",
+  "scripts": {
+    "test": "vows --spec --isolate test/*-test.js"
+  },
+  "main": "./lib/connect-databank",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanp/connect-databank.git"
+  },
+  "keywords": [
+    "express",
+    "session",
+    "databank"
+  ],
+  "dependencies": {
+    "databank": "^0.19.1",
+    "jankyqueue": "0.1.x",
+    "step": "0.0.x",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "bunyan": "^1.7.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "vows": "0.7.x",
+    "zombie": "^4.2.1"
+  },
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
+  ],
+  "engines": {
+    "node": ">=0.8"
+  }
 }
