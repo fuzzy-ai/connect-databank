@@ -87,8 +87,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -184,8 +184,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -221,8 +221,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -244,7 +244,7 @@ suite.addBatch({
                                 name: "Curly"
                             };
 
-                        store.set("VALID1", session, callback); 
+                        store.set("VALID1", session, callback);
                     },
                     "it works": function(err) {
                         assert.ifError(err);
@@ -297,7 +297,7 @@ suite.addBatch({
                             assert.isFalse(session.cookie.expires);
                         }
                     },
-                    "and we get the length()": lengthContext(1) 
+                    "and we get the length()": lengthContext(1)
                 }
             }
         }
@@ -314,8 +314,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -336,7 +336,7 @@ suite.addBatch({
                                 var i, group = this.group();
 
                                 for (i = 0; i < 1000; i++) {
-                                    store.set("LOTS"+i, {cookie: {expires: false}, number: i}, group()); 
+                                    store.set("LOTS"+i, {cookie: {expires: false}, number: i}, group());
                                 }
                             },
                             function(err) {
@@ -356,7 +356,7 @@ suite.addBatch({
                                     var i, group = this.group();
 
                                     for (i = 0; i < 1000; i++) {
-                                        store.get("LOTS"+i, group()); 
+                                        store.get("LOTS"+i, group());
                                     }
                                 },
                                 function(err, sessions) {
@@ -422,7 +422,7 @@ suite.addBatch({
                             }
                         }
                     },
-                    "and we get the length()": lengthContext(1000) 
+                    "and we get the length()": lengthContext(1000)
                 }
             }
         }
@@ -439,8 +439,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -461,7 +461,7 @@ suite.addBatch({
                                 var i, group = this.group();
 
                                 for (i = 0; i < 1000; i++) {
-                                    store.set("MORE"+i, {cookie: {expires: false}, number: i}, group()); 
+                                    store.set("MORE"+i, {cookie: {expires: false}, number: i}, group());
                                 }
                             },
                             function(err) {
@@ -481,7 +481,7 @@ suite.addBatch({
                                     var i, group = this.group();
 
                                     for (i = 0; i < 1000; i++) {
-                                        store.destroy("MORE"+i, group()); 
+                                        store.destroy("MORE"+i, group());
                                     }
                                 },
                                 function(err) {
@@ -506,7 +506,7 @@ suite.addBatch({
                                 assert.lengthOf(sessions, 0);
                             }
                         },
-                        "and we get the length()": lengthContext(0) 
+                        "and we get the length()": lengthContext(0)
                     }
                 }
             }
@@ -524,8 +524,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -546,7 +546,7 @@ suite.addBatch({
                                 var i, group = this.group();
 
                                 for (i = 0; i < 1000; i++) {
-                                    store.set("EVENMORE"+i, {cookie: {expires: false}, number: i}, group()); 
+                                    store.set("EVENMORE"+i, {cookie: {expires: false}, number: i}, group());
                                 }
                             },
                             function(err) {
@@ -578,7 +578,7 @@ suite.addBatch({
                                 assert.lengthOf(sessions, 0);
                             }
                         },
-                        "and we get the length()": lengthContext(0) 
+                        "and we get the length()": lengthContext(0)
                     }
                 }
             }

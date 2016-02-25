@@ -37,8 +37,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -74,7 +74,7 @@ suite.addBatch({
                 "and we add a bunch of sessions": {
                     topic: function(store) {
                         var cb = this.callback;
-                        
+
                         Step(
                             function() {
                                 var i, group = this.group(), now = Date.now();
@@ -103,7 +103,7 @@ suite.addBatch({
                         "and we add a bunch more sessions": {
                             topic: function(store) {
                                 var cb = this.callback;
-                                
+
                                 Step(
                                     function() {
                                         var i, group = this.group(), now = Date.now();

@@ -1,6 +1,6 @@
 // logging-test.js
 //
-// Test the logging 
+// Test the logging
 //
 // Copyright 2012, E14N Inc.
 //
@@ -75,8 +75,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -88,7 +88,7 @@ suite.addBatch({
 		        str = new StreamMock(),
 		        log = new Logger({name: "connect-databank-test",
 					  stream: str});
-		        
+
 
 		    db.connect({}, function(err) {
 			var store;
@@ -208,8 +208,8 @@ suite.addBatch({
         },
         "and we apply it to the connect module": {
             topic: function(middleware) {
-                var connect = require("connect");
-                return middleware(connect);
+              var session = require("express-session");
+              return middleware(session);
             },
             "it works": function(DatabankStore) {
                 assert.isFunction(DatabankStore);
@@ -218,7 +218,7 @@ suite.addBatch({
                 topic: function(DatabankStore) {
 		    var callback = this.callback,
 		        db = Databank.get("memory", {});
-		        
+
 
 		    db.connect({}, function(err) {
 			var store;
